@@ -5,6 +5,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import Sidebar from "./components/sidebar";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -16,7 +17,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <div
+          className="div "
+          style={{
+            display: "flex",
+          }}
+        >
+          <Sidebar />
+          <div className="div">{children}</div>
+        </div>
         <ScrollRestoration />
         <Scripts />
       </body>
