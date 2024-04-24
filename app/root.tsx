@@ -5,7 +5,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import Sidebar from "./components/sidebar";
+import NavBar from "./components/navbar";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -16,14 +16,23 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body
+        style={{
+          fontFamily: "system-ui, sans-serif",
+          lineHeight: "1.8",
+        }}
+      >
         <div
-          className="div "
           style={{
             display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          <Sidebar />
+          <br />
+          <NavBar />
+          {/* <Sidebar /> */}
           <div className="div">{children}</div>
         </div>
         <ScrollRestoration />
